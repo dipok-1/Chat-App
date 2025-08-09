@@ -23,7 +23,7 @@ const [socket,setsocket] = useState<WebSocket | null>(null)
    }
 
    ws.onmessage = (event)=>{
-       console.log("message from server: "+event.data);
+      //  console.log("message from server: "+event.data);
        const parseddata = JSON.parse(event.data)
       setdata((prev)=>[...prev,parseddata])
    }
@@ -75,7 +75,7 @@ const [socket,setsocket] = useState<WebSocket | null>(null)
         <button className='border rounded p-4 font-mono' onClick={closeconnection}>Leave</button>
       </div>
       <div className='flex flex-col items-center justify-center gap-10'>
-        <div className='bg-gray-50 h-96 rounded-2xl border-2 p-4 w-72 sm:w-96'>
+        <div className='bg-gray-50 h-96 rounded-2xl border-2 p-4 w-72 sm:w-96 overflow-y-auto'>
                   {data.map((m,i)=>(
            <Chatmessage key={i} data={m} />
         ))}
