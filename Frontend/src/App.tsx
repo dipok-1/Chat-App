@@ -16,7 +16,7 @@ const [data,setdata] = useState<ChatData[]>([])
 const [socket,setsocket] = useState<WebSocket | null>(null)
 
   useEffect(()=>{
-   const ws = new WebSocket("ws://localhost:8080")
+   const ws = new WebSocket("wss://chat-app-production-45c4.up.railway.app")
 
    ws.onopen = () =>{
        console.log('WebSocket connection established.');
